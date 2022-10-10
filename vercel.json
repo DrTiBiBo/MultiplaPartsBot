@@ -3,8 +3,5 @@
     "name": "multipla-parts-bot",
     "builds": [
       { "src": "./dist/bot.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "/dist/bot.js" }
     ]
   }
