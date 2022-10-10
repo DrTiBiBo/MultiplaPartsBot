@@ -3,9 +3,9 @@
 
 
 "@types/node@^18.0.6":
-  "integrity" "sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.0.6.tgz"
-  "version" "18.0.6"
+  "integrity" "sha512-0os9vz6BpGwxGe9LOhgP/ncvYN5Tx1fNcd2TM3rD/aCGBkysb+ZWpXEocG24h6ZzOi13+VB8HndAQFezsSOw1w=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.8.3.tgz"
+  "version" "18.8.3"
 
 "ajv@^6.12.3":
   "integrity" "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="
@@ -223,9 +223,9 @@
   "version" "2.1.0"
 
 "fetch-blob@^3.1.2", "fetch-blob@^3.1.4":
-  "integrity" "sha512-N64ZpKqoLejlrwkIAnb9iLSA3Vx/kjgzpcDhygcqJ2KKjky8nCgUQ+dzXtbrLaWZGZNmNfQTsiQ0weZ1svglHg=="
-  "resolved" "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.1.5.tgz"
-  "version" "3.1.5"
+  "integrity" "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ=="
+  "resolved" "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.2.0.tgz"
+  "version" "3.2.0"
   dependencies:
     "node-domexception" "^1.0.0"
     "web-streams-polyfill" "^3.0.3"
@@ -520,9 +520,9 @@
   "version" "1.0.0"
 
 "node-fetch@^3.2.6":
-  "integrity" "sha512-LAy/HZnLADOVkVPubaxHDft29booGglPFDr2Hw0J1AercRh01UiVFm++KMDnJeH9sHgNB4hsXPii7Sgym/sTbw=="
-  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.6.tgz"
-  "version" "3.2.6"
+  "integrity" "sha512-MhuzNwdURnZ1Cp4XTazr69K0BTizsBroX7Zx3UgDSVcZYKF/6p0CBe4EUb/hLqmzVhl0UpYfgRljQ4yxE+iCxA=="
+  "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-3.2.10.tgz"
+  "version" "3.2.10"
   dependencies:
     "data-uri-to-buffer" "^4.0.0"
     "fetch-blob" "^3.1.4"
