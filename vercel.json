@@ -1,7 +1,9 @@
 {
-    "version": 2,
-    "name": "multipla-parts-bot",
-    "builds": [
-      { "src": "./dist/bot.js", "use": "@vercel/node" }
-    ]
-  }
+	"version": 2,
+	"routes": [
+		{
+			"src": "/.*",
+			"dest": "api/index.ts"
+		}
+	]
+}
