@@ -1,7 +1,15 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import { Telegraf, Context as TelegrafContext } from "telegraf";
+import { Telegraf, Context as TelegrafContext, session } from "telegraf";
+
 import { about } from "..";
 import { ok } from "./responses";
+import startScene from '../controllers/start';
+import { Scenes } from "telegraf";
+
+//import { Update } from "telegraf/typings/core/types/typegram";
+//import { Stage } from "telegraf/typings/scenes";
+
+
 
 
 const isDev = process.env.DEV;
@@ -10,15 +18,35 @@ const VERCEL_URL = process.env.VERCEL_URL;
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
 
-export const bot = new Telegraf(BOT_TOKEN);
+export const bot = new Telegraf<Scenes.SceneContext>(BOT_TOKEN);
+
+//const { enter, leave } = Scenes.Stage;
+
 
 function botUtils() {
+	console.log('Test');
+	
 	bot.use(Telegraf.log());
-	bot.use(logger);
-
-	bot.start(ctx => {
-		return ctx.reply("This is a test bot.");
+	//bot.use(logger);
+	const testScene = new Scenes.BaseScene<Scenes.SceneContext>('test');
+	testScene.enter(ctx => {
+		console.log('enter scene');
+		ctx.reply('Hello!');
 	});
+
+	testScene.leave(ctx => {ctx.reply('Bye!')});
+
+	const stage = new Scenes.Stage<Scenes.SceneContext>([testScene, startScene], {ttl: 10});
+	bot.use(session());	
+	bot.use(stage.middleware());
+	bot.start((async (ctx) => {
+		console.log('bot start');
+		
+		ctx.scene.enter('start');
+		//Scenes.Stage.enter<Scenes.SceneContext>('test');
+	}));
+	//bot.start((async (ctx) => {ctx.scene.});
+	//bot.start(async (ctx:Context) => ctx.sendMessage('Hello!'));
 
 	bot.command("about", about());
 }
